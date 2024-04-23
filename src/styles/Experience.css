@@ -1,0 +1,119 @@
+.experience-content {
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 150px; /* Reducido de 250px a 150px */
+  margin-top: 60px;
+  position: relative;
+  padding-top: 100px;
+  flex-direction: column; /* Agregado para apilar verticalmente en pantallas pequeñas */
+  align-items: center; /* Agregado para centrar horizontalmente */
+}
+
+.experience-title {
+  margin-bottom: 60px;
+  text-align: center;
+  top: 80px;
+  background-color: #202020;
+  padding: 20px;
+}
+
+.experience-title h4 {
+  text-transform: uppercase;
+  font-size: 2.5rem; /* Cambiado a una unidad relativa */
+  line-height: 1.2;
+  color: #fed700;
+  margin-bottom: 20px;
+}
+
+.experience-content .title {
+  color: #fed700;
+}
+
+.experience-content .experience,
+.experience-content .internship {
+  color: #e5e5e5;
+  flex: 1;
+  margin-top: 30px;
+  max-width: 1200px; /* Ancho máximo limitado a 1200px */
+}
+
+.experience-content h3.title {
+  font-size: 1.5rem; /* Cambiado a una unidad relativa */
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.experience-content .timeline-box {
+  flex: 1;
+  max-width: 100%;
+}
+
+.experience-content .timeline {
+  padding: 30px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.experience-content .timeline-item {
+  position: relative;
+  padding-left: 37px;
+  padding-bottom: 50px;
+}
+
+.experience-content .internship .timeline-item {
+  position: relative;
+  padding-left: 37px;
+  padding-bottom: 30px;
+}
+
+.experience-content .timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.experience-content .timeline-item::before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  left: 7px;
+  top: 0;
+  background-color: #fed700;
+}
+
+.experience-content .circle-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+}
+
+.experience-content .timeline-title {
+  font-weight: 700 !important; /* Agregado !important para anular los estilos de Bootstrap */
+  font-size: 1.125rem; /* Cambiado a una unidad relativa */
+  margin-bottom: 12px;
+}
+
+.experience-content .internship .timeline-title {
+  font-weight: 700 !important; /* Agregado !important para anular los estilos de Bootstrap */
+  font-size: 1.125rem; /* Cambiado a una unidad relativa */
+  margin-bottom: 8px;
+}
+
+.experience-content .timeline-text {
+  line-height: 1.5;
+  font-size: 1rem; /* Cambiado a una unidad relativa */
+  text-align: justify;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .experience-content .experience,
+  .experience-content .internship {
+    max-width: 100%;
+  }
+}
