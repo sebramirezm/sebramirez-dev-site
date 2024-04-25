@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IntlProvider } from 'react-intl';
 import English from './i18n/translations/en.json';
 import Spanish from './i18n/translations/es.json';
@@ -9,7 +9,7 @@ import About from './components/About';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
-import { initScrollReveal } from './utils/scrollReveal';
+import './styles/App.css';
 
 const resources = {
   en: English,
@@ -20,19 +20,22 @@ const resources = {
 function App() {
   const [locale, setLocale] = useState('en');
   const [messages, setMessages] = useState(resources.en);
-  const [isLoading, setIsLoading] = useState(true);
-  const headerRef = useRef(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
-    const initScrollRevealWrapper = () => {
-      if (headerRef.current) { 
-        const headerHeight = headerRef.current.offsetHeight;
-        initScrollReveal(headerHeight);
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const aboutSectionTop = aboutSection.offsetTop;
+        const currentScrollPos = window.pageYOffset;
+        setShowScrollToTop(currentScrollPos >= aboutSectionTop);
       }
     };
 
-    initScrollRevealWrapper();
-    setIsLoading(false);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleLanguageChange = (lang) => {
@@ -40,19 +43,28 @@ function App() {
     setMessages(resources[lang]);
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <IntlProvider locale={locale} messages={messages}>
       <div>
-        <Header ref={headerRef} onLanguageChange={handleLanguageChange} /> {/* Pasa la referencia al componente Header */}
+        <Header onLanguageChange={handleLanguageChange} />
         <Home />
         <About />
         <Education />
         <Experience />
         <Footer />
+        <div
+          className={`scroll-to-top ${showScrollToTop ? 'show' : ''}`}
+          onClick={handleScrollToTop}
+        >
+          <i className="fa fa-arrow-up"></i>
+        </div>
       </div>
     </IntlProvider>
   );

@@ -20,19 +20,8 @@
 
 .about-content {
   flex-basis: 60%;
-  opacity: 0;
-  animation: fadeInLeft 1s ease-in-out forwards;
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .about-content h4 {
@@ -54,19 +43,8 @@
 
 .about-skills {
   flex-basis: 35%;
-  opacity: 0;
-  animation: fadeInRight 1s ease-in-out 0.5s forwards;
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .about-skills ul li {
@@ -78,12 +56,11 @@
 }
 
 .about-skills ul li:last-child {
-  border-bottom: 0;
+  border-bottom: none;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .about {
     flex-direction: column;

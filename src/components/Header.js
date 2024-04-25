@@ -2,27 +2,34 @@ import React, { useState, useEffect, forwardRef } from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import '../styles/Header.css';
 
-const Header = forwardRef((props, ref) => { // Utiliza forwardRef para permitir que el componente reciba una referencia
+const Header = forwardRef((props, ref) => {
   const [isSticky, setIsSticky] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const availableLanguages = ['en', 'es', 'pt'];
 
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
   };
 
   const changeLanguage = (language) => {
-    console.log('Cambiando idioma a:', language);
     props.onLanguageChange(language);
     setCurrentLanguage(language);
     setIsLanguageMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.pageYOffset > 0);
       updateActiveSection();
+      setIsMenuOpen(false);
+      setIsLanguageMenuOpen(false);
     };
 
     const updateActiveSection = () => {
@@ -53,74 +60,75 @@ const Header = forwardRef((props, ref) => { // Utiliza forwardRef para permitir 
     e.preventDefault();
     const section = document.getElementById(sectionId);
     section.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
   };
 
   return (
-    <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}> {/* Pasa la referencia al elemento header */}
+    <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}>
       <div className="container">
         <div className="header">
           <a href="" className="logo">
             <img src="files/signature.png" alt="" className="signature" />
             <i className="fa fa-bolt"></i>
           </a>
-          <ul className="navbar">
-            <li>
-              <a
-                href="#home"
-                className={activeSection === 'home' ? 'active' : ''}
-                onClick={(e) => handleLinkClick(e, 'home')}
-              >
-                <FormattedMessage id="header.home" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className={activeSection === 'about' ? 'active' : ''}
-                onClick={(e) => handleLinkClick(e, 'about')}
-              >
-                <FormattedMessage id="header.about" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#educations"
-                className={activeSection === 'educations' ? 'active' : ''}
-                onClick={(e) => handleLinkClick(e, 'educations')}
-              >
-                <FormattedMessage id="header.education" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="#experience"
-                className={activeSection === 'experience' ? 'active' : ''}
-                onClick={(e) => handleLinkClick(e, 'experience')}
-              >
-                <FormattedMessage id="header.experience" />
-              </a>
-            </li>
-            <li className="language-menu">
+          <div className="menu-container">
+            <ul className={`navbar ${isMenuOpen ? 'active' : ''}`}>
+              <li>
+                <a
+                  href="#home"
+                  className={activeSection === 'home' ? 'active' : ''}
+                  onClick={(e) => handleLinkClick(e, 'home')}
+                >
+                  <FormattedMessage id="header.home" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  className={activeSection === 'about' ? 'active' : ''}
+                  onClick={(e) => handleLinkClick(e, 'about')}
+                >
+                  <FormattedMessage id="header.about" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#educations"
+                  className={activeSection === 'educations' ? 'active' : ''}
+                  onClick={(e) => handleLinkClick(e, 'educations')}
+                >
+                  <FormattedMessage id="header.education" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  className={activeSection === 'experience' ? 'active' : ''}
+                  onClick={(e) => handleLinkClick(e, 'experience')}
+                >
+                  <FormattedMessage id="header.experience" />
+                </a>
+              </li>
+            </ul>
+            <div className="language-menu">
               <button className="language-menu-toggle" onClick={toggleLanguageMenu}>
                 <img src={`files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" />
               </button>
               {isLanguageMenuOpen && (
                 <ul className="language-submenu">
-                  <li onClick={() => changeLanguage('en')}>
-                    <img src="files/en.png" alt="English" className="flag-icon" />
-                  </li>
-                  <li onClick={() => changeLanguage('es')}>
-                    <img src="files/es.png" alt="Español" className="flag-icon" />
-                  </li>
-                  <li onClick={() => changeLanguage('pt')}>
-                    <img src="files/pt.png" alt="Português" className="flag-icon" />
-                  </li>
+                  {availableLanguages
+                    .filter((lang) => lang !== currentLanguage)
+                    .map((lang) => (
+                      <li key={lang} onClick={() => changeLanguage(lang)}>
+                        <img src={`files/${lang}.png`} alt={lang} className="flag-icon" />
+                      </li>
+                    ))}
                 </ul>
               )}
-            </li>
-          </ul>
-          <div className="menu_icon">
-            <i className="fa fa-bars"></i>
+            </div>
+          </div>
+          <div className="menu_icon" onClick={toggleMenu}>
+            <i className={`fa ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
           </div>
         </div>
       </div>

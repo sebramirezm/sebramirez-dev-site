@@ -2,11 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem;
-  min-height: 80vh;
-  transform: scale(1.05);
-  overflow-x: hidden;
   padding-top: 100px;
+  min-height: calc(100vh - 100px);
+  overflow-x: hidden;
 }
 
 .FirstElement.adjusted-padding {
@@ -17,33 +15,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.FirstElement .profile-photo {
-  width: 346.5px;
-  height: 346.5px;
+.profile-photo {
+  width: 100%;
+  max-width: 346.5px;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
   border: 15.75px solid #444444;
   box-shadow: 5.25px 7.35px 26.25px rgba(0, 0, 0, 0.5);
   margin-right: 5.25rem;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out forwards;
+  box-sizing: border-box;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.profile-photo .img {
+.profile-photo img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -54,8 +45,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  opacity: 0;
-  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  margin-bottom: 2rem;
 }
 
 .profile-text h5 {
@@ -73,27 +63,30 @@
   font-size: 1.155rem;
 }
 
-.profile-text .social i {
+.social {
+  margin-top: 1rem;
+}
+
+.social i {
   color: #e5e5e5;
   font-size: 1.7325rem;
   margin-right: 10.5px;
   transition: 0.5s;
 }
 
-.profile-text .social i:hover {
+.social i:hover {
   color: #fed700;
   transform: rotate(360deg);
 }
 
-/* Button */
 .btn-group {
-  margin: 51.975px 0;
+  margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.btn-group .btn {
+.btn {
   border-color: #d5d5d5;
   color: #fff;
   background-color: #333;
@@ -101,7 +94,7 @@
   margin: 5.775px;
   border-radius: 34.65px;
   border: 2.31px solid #e5e5e5;
-  box-shadow: 0 11.55px 11.55px -9.24px rgb(0 0 0 / 78%);
+  box-shadow: 0 11.55px 11.55px -9.24px rgba(0, 0, 0, 0.78);
   transition: all 0.3s ease;
 }
 
@@ -113,40 +106,65 @@
   background-color: #444;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   .FirstElement {
-    flex-direction: column;
+    margin-top: 110px;
     padding-top: 2.1rem;
   }
-
+  
   .FirstElement .content {
     flex-direction: column;
     align-items: center;
   }
+}
 
-  .FirstElement .profile-photo {
+@media (max-width: 1024px) {
+  .FirstElement {
+    flex-direction: column;
+    padding-top: 2.1rem;
+    align-items: center;
+    margin-top: 110px;
+  }
+  
+  .FirstElement .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .FirstElement {
+    padding-top: 2.1rem;
+    margin-top: 80px;
+  }
+  
+  .FirstElement .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-photo {
     width: 231px;
     height: 231px;
     margin-right: 0;
     margin-bottom: 2.1rem;
   }
-
+  
   .profile-text {
     max-width: 94.5%;
     align-items: center;
     text-align: center;
   }
-
+  
   .profile-text h1 {
     font-size: 2.31rem;
   }
-
+  
   .btn-group {
     justify-content: center;
   }
-
-  .btn-group .btn {
+  
+  .btn {
     padding: 11.55px 23.1px;
     font-size: 1.0395rem;
   }
@@ -155,8 +173,9 @@
 @media (min-width: 1024px) {
   .FirstElement {
     justify-content: center;
+    margin-top: 80px;
   }
-
+  
   .FirstElement .content {
     justify-content: center;
   }
