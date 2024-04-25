@@ -12,9 +12,10 @@
 .experience-title {
   margin-bottom: 60px;
   text-align: center;
-  top: 80px;
   background-color: #202020;
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-title h4 {

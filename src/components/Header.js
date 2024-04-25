@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import '../styles/Header.css';
 
-function Header(props) {
+const Header = forwardRef((props, ref) => { // Utiliza forwardRef para permitir que el componente reciba una referencia
   const [isSticky, setIsSticky] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
@@ -13,6 +13,7 @@ function Header(props) {
   };
 
   const changeLanguage = (language) => {
+    console.log('Cambiando idioma a:', language);
     props.onLanguageChange(language);
     setCurrentLanguage(language);
     setIsLanguageMenuOpen(false);
@@ -30,7 +31,7 @@ function Header(props) {
         setActiveSection('home');
         return;
       }
-    
+
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => {
         const target = section.getAttribute('id');
@@ -48,8 +49,14 @@ function Header(props) {
     };
   });
 
+  const handleLinkClick = (e, sectionId) => {
+    e.preventDefault();
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <header className={`header-area ${isSticky ? 'sticky' : ''}`}>
+    <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}> {/* Pasa la referencia al elemento header */}
       <div className="container">
         <div className="header">
           <a href="" className="logo">
@@ -57,7 +64,43 @@ function Header(props) {
             <i className="fa fa-bolt"></i>
           </a>
           <ul className="navbar">
-          <li className="language-menu">
+            <li>
+              <a
+                href="#home"
+                className={activeSection === 'home' ? 'active' : ''}
+                onClick={(e) => handleLinkClick(e, 'home')}
+              >
+                <FormattedMessage id="header.home" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className={activeSection === 'about' ? 'active' : ''}
+                onClick={(e) => handleLinkClick(e, 'about')}
+              >
+                <FormattedMessage id="header.about" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#educations"
+                className={activeSection === 'educations' ? 'active' : ''}
+                onClick={(e) => handleLinkClick(e, 'educations')}
+              >
+                <FormattedMessage id="header.education" />
+              </a>
+            </li>
+            <li>
+              <a
+                href="#experience"
+                className={activeSection === 'experience' ? 'active' : ''}
+                onClick={(e) => handleLinkClick(e, 'experience')}
+              >
+                <FormattedMessage id="header.experience" />
+              </a>
+            </li>
+            <li className="language-menu">
               <button className="language-menu-toggle" onClick={toggleLanguageMenu}>
                 <img src={`files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" />
               </button>
@@ -75,26 +118,6 @@ function Header(props) {
                 </ul>
               )}
             </li>
-            <li>
-              <a href="#home" className={activeSection === 'home' ? 'active' : ''}>
-                <FormattedMessage id="header.home" />
-              </a>
-            </li>
-            <li>
-              <a href="#about" className={activeSection === 'about' ? 'active' : ''}>
-                <FormattedMessage id="header.about" />
-              </a>
-            </li>
-            <li>
-              <a href="#educations" className={activeSection === 'educations' ? 'active' : ''}>
-                <FormattedMessage id="header.education" />
-              </a>
-            </li>
-            <li>
-              <a href="#experience" className={activeSection === 'experience' ? 'active' : ''}>
-                <FormattedMessage id="header.experience" />
-              </a>
-            </li>
           </ul>
           <div className="menu_icon">
             <i className="fa fa-bars"></i>
@@ -103,6 +126,6 @@ function Header(props) {
       </div>
     </header>
   );
-}
+});
 
-export default injectIntl(Header, { forwardRef: true });
+export default injectIntl(Header);

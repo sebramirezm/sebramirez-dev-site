@@ -19,7 +19,7 @@ function About() {
             </ul>
           </div>
           <div className="about-skills">
-          <ul>
+            <ul>
               <li>
                 <FormattedMessage id="about.name" />
               </li>

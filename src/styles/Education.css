@@ -1,6 +1,7 @@
 .education-content {
   padding-top: 100px;
   position: relative;
+  z-index: 2;
 }
 
 .education-title {

@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem; /* Reducido de 2rem a 1rem */
-  min-height: 80vh; /* Reducido de 90vh a 80vh */
+  padding-top: 1rem;
+  min-height: 80vh;
   transform: scale(1.05);
   overflow-x: hidden;
+  padding-top: 100px;
 }
 
 .FirstElement.adjusted-padding {
@@ -16,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%; /* Ancho máximo ajustado al 100% */
+  max-width: 100%;
 }
 
 .FirstElement .profile-photo {
@@ -27,44 +28,55 @@
   border: 15.75px solid #444444;
   box-shadow: 5.25px 7.35px 26.25px rgba(0, 0, 0, 0.5);
   margin-right: 5.25rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .profile-photo .img {
   height: 100%;
   width: 100%;
-  transition: 0.5s;
-}
-
-.FirstElement .profile-photo img:hover {
-  transform: scale(1.2);
+  object-fit: cover;
 }
 
 .profile-text {
-  max-width: 866.25px; /* Aumentado en un 5% */
+  max-width: 866.25px;
   display: flex;
   flex-direction: column;
   text-align: left;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
 
 .profile-text h5 {
   color: #e5e5e5;
-  font-size: 1.155rem; /* Aumentado en un 5% */
+  font-size: 1.155rem;
 }
 
 .profile-text h1 {
   color: #fed700;
-  font-size: 3.465rem; /* Aumentado en un 5% */
+  font-size: 3.465rem;
 }
 
 .profile-text p {
   color: #e5e5e5;
-  font-size: 1.155rem; /* Aumentado en un 5% */
+  font-size: 1.155rem;
 }
 
 .profile-text .social i {
   color: #e5e5e5;
-  font-size: 1.7325rem; /* Aumentado en un 5% */
-  margin-right: 10.5px; /* Aumentado en un 5% */
+  font-size: 1.7325rem;
+  margin-right: 10.5px;
   transition: 0.5s;
 }
 
@@ -73,9 +85,9 @@
   transform: rotate(360deg);
 }
 
-/*---------------------------Button---------------------------*/
+/* Button */
 .btn-group {
-  margin: 51.975px 0; /* Aumentado en un 5% */
+  margin: 51.975px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -85,11 +97,11 @@
   border-color: #d5d5d5;
   color: #fff;
   background-color: #333;
-  padding: 13.86px 28.875px; /* Aumentado en un 5% */
-  margin: 5.775px; /* Aumentado en un 5% */
-  border-radius: 34.65px; /* Aumentado en un 5% */
-  border: 2.31px solid #e5e5e5; /* Aumentado en un 5% */
-  box-shadow: 0 11.55px 11.55px -9.24px rgb(0 0 0 / 78%); /* Aumentado en un 5% */
+  padding: 13.86px 28.875px;
+  margin: 5.775px;
+  border-radius: 34.65px;
+  border: 2.31px solid #e5e5e5;
+  box-shadow: 0 11.55px 11.55px -9.24px rgb(0 0 0 / 78%);
   transition: all 0.3s ease;
 }
 
@@ -101,11 +113,11 @@
   background-color: #444;
 }
 
-/* Estilos para pantallas más pequeñas */
+/* Media Queries */
 @media (max-width: 768px) {
   .FirstElement {
     flex-direction: column;
-    padding-top: 2.1rem; /* Aumentado en un 5% */
+    padding-top: 2.1rem;
   }
 
   .FirstElement .content {
@@ -114,20 +126,20 @@
   }
 
   .FirstElement .profile-photo {
-    width: 231px; /* Aumentado en un 5% */
-    height: 231px; /* Aumentado en un 5% */
+    width: 231px;
+    height: 231px;
     margin-right: 0;
-    margin-bottom: 2.1rem; /* Aumentado en un 5% */
+    margin-bottom: 2.1rem;
   }
 
   .profile-text {
-    max-width: 94.5%; /* Aumentado en un 5% */
+    max-width: 94.5%;
     align-items: center;
     text-align: center;
   }
 
   .profile-text h1 {
-    font-size: 2.31rem; /* Aumentado en un 5% */
+    font-size: 2.31rem;
   }
 
   .btn-group {
@@ -135,12 +147,11 @@
   }
 
   .btn-group .btn {
-    padding: 11.55px 23.1px; /* Aumentado en un 5% */
-    font-size: 1.0395rem; /* Aumentado en un 5% */
+    padding: 11.55px 23.1px;
+    font-size: 1.0395rem;
   }
 }
 
-/* Estilos para pantallas de 13 pulgadas en adelante */
 @media (min-width: 1024px) {
   .FirstElement {
     justify-content: center;
