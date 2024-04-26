@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem; /* Reducido de 2rem a 1rem */
-  min-height: 80vh; /* Reducido de 90vh a 80vh */
-  transform: scale(1.05);
+  padding-top: 100px;
+  min-height: calc(100vh - 100px);
   overflow-x: hidden;
 }
 
@@ -16,80 +15,86 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%; /* Ancho máximo ajustado al 100% */
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.FirstElement .profile-photo {
-  width: 346.5px;
-  height: 346.5px;
+.profile-photo {
+  width: 100%;
+  max-width: 346.5px;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
   border: 15.75px solid #444444;
   box-shadow: 5.25px 7.35px 26.25px rgba(0, 0, 0, 0.5);
   margin-right: 5.25rem;
+  box-sizing: border-box;
 }
 
-.profile-photo .img {
+.profile-photo img {
   height: 100%;
   width: 100%;
-  transition: 0.5s;
-}
-
-.FirstElement .profile-photo img:hover {
-  transform: scale(1.2);
+  object-fit: cover;
 }
 
 .profile-text {
-  max-width: 866.25px; /* Aumentado en un 5% */
+  max-width: 866.25px;
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin-bottom: 2rem;
 }
 
 .profile-text h5 {
   color: #e5e5e5;
-  font-size: 1.155rem; /* Aumentado en un 5% */
+  font-size: 1.155rem;
 }
 
 .profile-text h1 {
   color: #fed700;
-  font-size: 3.465rem; /* Aumentado en un 5% */
+  font-size: 3.465rem;
 }
 
 .profile-text p {
   color: #e5e5e5;
-  font-size: 1.155rem; /* Aumentado en un 5% */
+  font-size: 1.155rem;
 }
 
-.profile-text .social i {
+.social {
+  margin-top: 1rem;
+}
+
+.social i {
   color: #e5e5e5;
-  font-size: 1.7325rem; /* Aumentado en un 5% */
-  margin-right: 10.5px; /* Aumentado en un 5% */
+  font-size: 1.7325rem;
+  margin-right: 10.5px;
   transition: 0.5s;
 }
 
-.profile-text .social i:hover {
+.social i:hover {
   color: #fed700;
   transform: rotate(360deg);
 }
 
-/*---------------------------Button---------------------------*/
 .btn-group {
-  margin: 51.975px 0; /* Aumentado en un 5% */
+  margin: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.btn-group .btn {
+.btn {
   border-color: #d5d5d5;
   color: #fff;
   background-color: #333;
-  padding: 13.86px 28.875px; /* Aumentado en un 5% */
-  margin: 5.775px; /* Aumentado en un 5% */
-  border-radius: 34.65px; /* Aumentado en un 5% */
-  border: 2.31px solid #e5e5e5; /* Aumentado en un 5% */
-  box-shadow: 0 11.55px 11.55px -9.24px rgb(0 0 0 / 78%); /* Aumentado en un 5% */
+  padding: 13.86px 28.875px;
+  margin: 5.775px;
+  border-radius: 34.65px;
+  border: 2.31px solid #e5e5e5;
+  box-shadow: 0 11.55px 11.55px -9.24px rgba(0, 0, 0, 0.78);
   transition: all 0.3s ease;
 }
 
@@ -101,51 +106,76 @@
   background-color: #444;
 }
 
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
   .FirstElement {
-    flex-direction: column;
-    padding-top: 2.1rem; /* Aumentado en un 5% */
+    margin-top: 110px;
+    padding-top: 2.1rem;
   }
-
+  
   .FirstElement .content {
     flex-direction: column;
     align-items: center;
   }
+}
 
-  .FirstElement .profile-photo {
-    width: 231px; /* Aumentado en un 5% */
-    height: 231px; /* Aumentado en un 5% */
-    margin-right: 0;
-    margin-bottom: 2.1rem; /* Aumentado en un 5% */
-  }
-
-  .profile-text {
-    max-width: 94.5%; /* Aumentado en un 5% */
+@media (max-width: 1024px) {
+  .FirstElement {
+    flex-direction: column;
+    padding-top: 2.1rem;
     align-items: center;
-    text-align: center;
+    margin-top: 110px;
   }
-
-  .profile-text h1 {
-    font-size: 2.31rem; /* Aumentado en un 5% */
-  }
-
-  .btn-group {
-    justify-content: center;
-  }
-
-  .btn-group .btn {
-    padding: 11.55px 23.1px; /* Aumentado en un 5% */
-    font-size: 1.0395rem; /* Aumentado en un 5% */
+  
+  .FirstElement .content {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-/* Estilos para pantallas de 13 pulgadas en adelante */
+@media (max-width: 768px) {
+  .FirstElement {
+    padding-top: 2.1rem;
+    margin-top: 80px;
+  }
+  
+  .FirstElement .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-photo {
+    width: 231px;
+    height: 231px;
+    margin-right: 0;
+    margin-bottom: 2.1rem;
+  }
+  
+  .profile-text {
+    max-width: 94.5%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.31rem;
+  }
+  
+  .btn-group {
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 11.55px 23.1px;
+    font-size: 1.0395rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .FirstElement {
     justify-content: center;
+    margin-top: 80px;
   }
-
+  
   .FirstElement .content {
     justify-content: center;
   }

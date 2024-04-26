@@ -1,16 +1,22 @@
 .header-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #202020;
   padding: 25px 0;
   transition: padding 0.3s;
 }
 
 .header-area.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  background-color: #202020;
-  padding: 5px;
+  padding: 20px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header .container {
@@ -26,13 +32,6 @@
   text-transform: uppercase;
   font-size: 26px;
   font-weight: 700;
-}
-
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .logo .fa-bolt {
@@ -51,48 +50,39 @@
   margin-right: 10px;
 }
 
-.header ul li:first-child {
-  margin-right: auto;
-}
-
-.header ul {
+.header .menu-container {
   display: flex;
   align-items: center;
-}
-
-.header ul li {
-  margin: 0 15px;
-  display: flex;
-  align-items: center;
-}
-
-.header ul li a {
-  text-transform: capitalize;
-  display: block;
-}
-
-.header ul li a.active {
-  color: #fed700;
-}
-
-.header ul li a:hover {
-  color: #fed700;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .header .menu_icon {
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
   display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
-/*-------Language Selector----------*/
+.header .menu_icon .fa-bars {
+  font-size: 2.2rem;
+}
+
+.header .language-menu {
+  margin-left: 24px;
+}
+
+.header .language-menu-toggle .flag-icon {
+  width: 33px;
+  height: 33px;
+}
 
 .language-menu {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 15px;
+  margin-left: auto;
 }
 
 .language-menu-toggle {
@@ -132,4 +122,91 @@
   cursor: pointer;
   width: 30px;
   height: 30px;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+}
+
+.header ul li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.header ul li a {
+  text-transform: capitalize;
+  display: block;
+}
+
+.header ul li a.active,
+.header ul li a:hover {
+  color: #fed700;
+}
+
+@media (max-width: 768px) {
+  .header-area {
+    padding: 20px 0;
+  }
+
+  .header-area.sticky {
+    padding: 20px 0;
+  }
+
+  .header .logo {
+    display: none;
+  }
+
+  .header .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .header .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .header .navbar.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header .navbar li {
+    margin: 10px 0;
+  }
+
+  .header .menu_icon {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header .language-menu-toggle .flag-icon {
+    font-size: 2.42rem;
+  }
+
+  .header .language-menu {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header .language-menu-toggle .flag-icon {
+    width: 42px;
+    height: 42px;
+  }
 }

@@ -28,10 +28,10 @@ function Home() {
           </a>
         </div>
         <div className="social">
-          <a href="https://www.linkedin.com/in/sebramirezm/">
+          <a href="https://www.linkedin.com/in/sebramirezm/" target="_blank">
             <i className="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://github.com/sebramirezm">
+          <a href="https://github.com/sebramirezm" target="_blank">
             <i className="fa-brands fa-github"></i>
           </a>
         </div>

@@ -1,25 +1,26 @@
 .experience-content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 5px;
-  margin-bottom: 150px; /* Reducido de 250px a 150px */
+  margin-bottom: 60px;
   margin-top: 60px;
-  position: relative;
   padding-top: 100px;
-  flex-direction: column; /* Agregado para apilar verticalmente en pantallas pequeñas */
-  align-items: center; /* Agregado para centrar horizontalmente */
+  position: relative;
 }
 
 .experience-title {
   margin-bottom: 60px;
   text-align: center;
-  top: 80px;
   background-color: #202020;
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .experience-title h4 {
   text-transform: uppercase;
-  font-size: 2.5rem; /* Cambiado a una unidad relativa */
+  font-size: 2.5rem;
   line-height: 1.2;
   color: #fed700;
   margin-bottom: 20px;
@@ -32,20 +33,19 @@
 .experience-content .experience,
 .experience-content .internship {
   color: #e5e5e5;
-  flex: 1;
   margin-top: 30px;
-  max-width: 1200px; /* Ancho máximo limitado a 1200px */
+  max-width: 1200px;
 }
 
 .experience-content h3.title {
-  font-size: 1.5rem; /* Cambiado a una unidad relativa */
+  font-size: 1.5rem;
   margin-bottom: 30px;
   font-weight: 700;
 }
 
 .experience-content .timeline-box {
-  flex: 1;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .experience-content .timeline {
@@ -63,8 +63,6 @@
 }
 
 .experience-content .internship .timeline-item {
-  position: relative;
-  padding-left: 37px;
   padding-bottom: 30px;
 }
 
@@ -93,24 +91,23 @@
 }
 
 .experience-content .timeline-title {
-  font-weight: 700 !important; /* Agregado !important para anular los estilos de Bootstrap */
-  font-size: 1.125rem; /* Cambiado a una unidad relativa */
+  font-weight: 700;
+  font-size: 1.125rem;
   margin-bottom: 12px;
 }
 
 .experience-content .internship .timeline-title {
-  font-weight: 700 !important; /* Agregado !important para anular los estilos de Bootstrap */
-  font-size: 1.125rem; /* Cambiado a una unidad relativa */
+  font-weight: 700;
+  font-size: 1.125rem;
   margin-bottom: 8px;
 }
 
 .experience-content .timeline-text {
   line-height: 1.5;
-  font-size: 1rem; /* Cambiado a una unidad relativa */
+  font-size: 1rem;
   text-align: justify;
 }
 
-/* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
   .experience-content .experience,
   .experience-content .internship {
