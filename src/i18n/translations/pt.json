@@ -10,12 +10,13 @@
   "about.title": "Sobre mim",
   "about.description1": "Minha carreira inclui experiências enriquecedoras no desenvolvimento de projetos em várias áreas usando Java, Spring, Bancos de Dados Relacionais e Não Relacionais, e Git.",
   "about.description2": "Minha experiência de trabalho envolve a criação de APIs RESTful, otimização de aplicativos e migração de sistemas para plataformas de nuvem como GCP. Eu gosto de assumir projetos pessoais que me desafiam e me permitem explorar novas tecnologias.",
-  "about.name": "Nome: Sebastián Ramírez",
+  "about.languages": "Línguas: Espanhol, Inglês (C1), Português (A2)",
   "about.age": "Idade: 33",
   "about.from": "De: Chile",
   "about.email": "Email: s.ramirexm@gmail.com",
   "about.availability": "Disponibilidade: Tempo integral",
-  "about.experience": "Experiência: < 5 anos",
+  "about.experience": "Experiência: 5 anos",
+  "about.skillTitle": "Habilidades",
   "education.title": "Formação Acadêmica",
   "education.programmer.title": "Analista Programador de Computadores",
   "education.programmer.description": "Na Duoc UC, de 2012 a 2014",
@@ -24,7 +25,7 @@
   "education.telecom.description": "Na Duoc UC, de 2009 a 2011",
   "education.telecom.details": "Desenvolvendo expertise em sistemas de telecomunicações, redes e tecnologias de ponta para soluções de comunicação sem problemas.",
   "education.volunteer.title": "Equipe Voluntária",
-  "education.volunteer.description": "Na Youth With A Mission California, de 2014 a 2015 e 2016 - 2017",
+  "education.volunteer.description": "Na Youth With A Mission California, de 2014 a 2017",
   "education.volunteer.details": "Voluntariado em uma organização sem fins lucrativos na Califórnia, EUA, atendendo jovens e sem-teto através de diversos programas comunitários.",
   "experience.title": "Experiência",
   "experience.globant.title": "Globant",
@@ -56,5 +57,6 @@
   "experience.belltech.title": "Belltech",
   "experience.belltech.trading.title": "Suporte à Mesa de Negociação",
   "experience.belltech.trading.date": "Set 2011 - Set 2014",
-  "experience.belltech.trading.description": "Instalação e manutenção de uma plataforma de comunicação para a mesa de negociação usando tecnologia da British Telecom. Instalação de plataformas Avaya e configuração de dispositivos Cisco. Configuração de servidores (Windows e Linux) para habilitar a funcionalidade de todas as plataformas mencionadas. Monitoramento usando o sistema NOC."
+  "experience.belltech.trading.description": "Instalação e manutenção de uma plataforma de comunicação para a mesa de negociação usando tecnologia da British Telecom. Instalação de plataformas Avaya e configuração de dispositivos Cisco. Configuração de servidores (Windows e Linux) para habilitar a funcionalidade de todas as plataformas mencionadas. Monitoramento usando o sistema NOC.",
+  "footer.message": "Obrigado pela visita!"
 }

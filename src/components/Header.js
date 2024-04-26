@@ -65,7 +65,7 @@ const Header = forwardRef((props, ref) => {
 
   return (
     <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}>
-      <div className="container">
+      <div className="container" >
         <div className="header">
           <a href="" className="logo">
             <img src="files/signature.png" alt="" className="signature" />
@@ -74,13 +74,6 @@ const Header = forwardRef((props, ref) => {
           <div className="menu-container">
             <ul className={`navbar ${isMenuOpen ? 'active' : ''}`}>
               <li>
-                <a
-                  href="#home"
-                  className={activeSection === 'home' ? 'active' : ''}
-                  onClick={(e) => handleLinkClick(e, 'home')}
-                >
-                  <FormattedMessage id="header.home" />
-                </a>
               </li>
               <li>
                 <a

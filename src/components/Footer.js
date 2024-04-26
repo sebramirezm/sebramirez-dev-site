@@ -1,10 +1,11 @@
 import React from 'react';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import '../styles/Footer.css';
 
 function Footer() {
   return (
     <footer className="footer">
-      <small className="message">Thanks for visiting!</small>
+      <small className="message"><FormattedMessage id="footer.message" /></small>
       <small className="copyright">&copy; Copyright 2024</small>
     </footer>
   );

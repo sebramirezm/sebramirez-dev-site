@@ -5,10 +5,10 @@ import '../styles/Home.css';
 function Home() {
   return (
     <div className="FirstElement" id="home">
-      <div className="profile-photo">
+      <div className="profile-photo" data-aos="fade-right">
         <img src="files/profile.jpeg" alt="profile picture" />
       </div>
-      <div className="profile-text">
+      <div className="profile-text" data-aos="fade-left">
         <h5><FormattedMessage id="home.greeting" /></h5>
         <br />
         <h1>Sebastián Ramírez</h1>
