@@ -6,44 +6,44 @@ function Experience() {
   return (
     <section className="experience-content" id="experience">
       <div className="container">
-        <div className="experience-title">
+        <div className="experience-title" data-aos="fade-up">
           <h4>
             <FormattedMessage id="experience.title" />
           </h4>
         </div>
         <div className="experience">
           <div className="timeline-box">
-            <h3 className="title">
-              <FormattedMessage id="experience.globant.title" />
+            <h3 className="title" data-aos="fade-right">
+              <FormattedMessage id="experience.globant.title"/>
             </h3>
             <div className="timeline">
-              <div className="timeline-item">
+              <div className="timeline-item" data-aos="fade-right">
                 <div className="circle-dot"></div>
-                <h3 className="timeline-title">
-                  <FormattedMessage id="experience.globant.backend1.title" />
-                </h3>
-                <h4 className="timeline-title">
-                  <i className="fa fa-calendar"></i>{' '}
-                  <FormattedMessage id="experience.globant.backend1.date" />
-                </h4>
-                <li className="timeline-text">
-                  <FormattedMessage id="experience.globant.backend1.description" />
-                </li>
-              </div>
-              <div className="timeline-item">
+                  <h3 className="timeline-title">
+                    <FormattedMessage id="experience.globant.backend1.title" />
+                  </h3>
+                  <h4 className="timeline-title">
+                    <i className="fa fa-calendar"></i>{' '}
+                    <FormattedMessage id="experience.globant.backend1.date" />
+                  </h4>
+                  <li className="timeline-text">
+                    <FormattedMessage id="experience.globant.backend1.description" />
+                  </li>
+                </div>
+              <div className="timeline-item" data-aos="fade-right">
                 <div className="circle-dot"></div>
-                <h3 className="timeline-title">
-                  <FormattedMessage id="experience.globant.backend2.title" />
-                </h3>
-                <h4 className="timeline-title">
-                  <i className="fa fa-calendar"></i>{' '}
-                  <FormattedMessage id="experience.globant.backend2.date" />
-                </h4>
-                <li className="timeline-text">
-                  <FormattedMessage id="experience.globant.backend2.description" />
-                </li>
+                  <h3 className="timeline-title">
+                    <FormattedMessage id="experience.globant.backend2.title" />
+                  </h3>
+                  <h4 className="timeline-title">
+                    <i className="fa fa-calendar"></i>{' '}
+                    <FormattedMessage id="experience.globant.backend2.date" />
+                  </h4>
+                  <li className="timeline-text">
+                    <FormattedMessage id="experience.globant.backend2.description" />
+                  </li>
               </div>
-              <div className="timeline-item">
+              <div className="timeline-item" data-aos="fade-right">
                 <div className="circle-dot"></div>
                 <h3 className="timeline-title">
                   <FormattedMessage id="experience.globant.java.title" />
@@ -59,7 +59,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="internship">
+        <div className="internship" data-aos="fade-left">
           <div className="timeline-box">
             <h3 className="title">
               <FormattedMessage id="experience.people23.title" />
@@ -81,7 +81,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="internship">
+        <div className="internship" data-aos="fade-right">
           <div className="timeline-box">
             <h3 className="title">
               <FormattedMessage id="experience.advise.title" />
@@ -103,7 +103,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="internship">
+        <div className="internship" data-aos="fade-left">
           <div className="timeline-box">
             <h3 className="title">
               <FormattedMessage id="experience.paimasa.title" />
@@ -125,7 +125,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="internship">
+        <div className="internship" data-aos="fade-right">
           <div className="timeline-box">
             <h3 className="title">
               <FormattedMessage id="experience.tradition.title" />
@@ -147,7 +147,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="internship">
+        <div className="internship" data-aos="fade-left">
           <div className="timeline-box">
             <h3 className="title">
               <FormattedMessage id="experience.belltech.title" />

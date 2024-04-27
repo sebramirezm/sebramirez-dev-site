@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { IntlProvider } from 'react-intl';
 import English from './i18n/translations/en.json';
 import Spanish from './i18n/translations/es.json';
@@ -21,8 +23,14 @@ function App() {
   const [locale, setLocale] = useState('en');
   const [messages, setMessages] = useState(resources.en);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  
 
   useEffect(() => {
+    AOS.init({
+      once: true, // Solo anima una vez
+      duration: 1000, // Duración de la animación en milisegundos
+      easing: 'ease-in-out', // Tipo de animación
+    });
     const handleScroll = () => {
       const aboutSection = document.getElementById('about');
       if (aboutSection) {
