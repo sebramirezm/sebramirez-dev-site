@@ -145,6 +145,14 @@
   color: #fed700;
 }
 
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .header-area {
     padding: 20px 0;

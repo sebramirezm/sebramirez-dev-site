@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="FirstElement" id="home">
       <div className="profile-photo" data-aos="fade-right">
-        <img src="files/profile.jpeg" alt="profile picture" />
+        <img src="files/profile.jpeg" alt="profile picture" oncontextmenu="return false;"/>
       </div>
       <div className="profile-text" data-aos="fade-left">
         <h5><FormattedMessage id="home.greeting" /></h5>

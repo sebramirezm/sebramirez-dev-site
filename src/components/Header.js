@@ -68,7 +68,7 @@ const Header = forwardRef((props, ref) => {
       <div className="container" >
         <div className="header">
           <a href="" className="logo">
-            <img src="files/signature.png" alt="" className="signature" />
+            <img src="files/signature.png" alt="" className="signature" oncontextmenu="return false;"/>
             <i className="fa fa-bolt"></i>
           </a>
           <div className="menu-container">
@@ -105,7 +105,7 @@ const Header = forwardRef((props, ref) => {
             </ul>
             <div className="language-menu">
               <button className="language-menu-toggle" onClick={toggleLanguageMenu}>
-                <img src={`files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" />
+                <img src={`files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" oncontextmenu="return false;"/>
               </button>
               {isLanguageMenuOpen && (
                 <ul className="language-submenu">
@@ -113,7 +113,7 @@ const Header = forwardRef((props, ref) => {
                     .filter((lang) => lang !== currentLanguage)
                     .map((lang) => (
                       <li key={lang} onClick={() => changeLanguage(lang)}>
-                        <img src={`files/${lang}.png`} alt={lang} className="flag-icon" />
+                        <img src={`files/${lang}.png`} alt={lang} className="flag-icon" oncontextmenu="return false;"/>
                       </li>
                     ))}
                 </ul>
