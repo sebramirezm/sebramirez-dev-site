@@ -26,14 +26,14 @@ const Header = forwardRef((props, ref) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.pageYOffset > 0);
+      setIsSticky(window.scrollY > 0);
       updateActiveSection();
       setIsMenuOpen(false);
       setIsLanguageMenuOpen(false);
     };
 
     const updateActiveSection = () => {
-      const scrollPosition = window.pageYOffset;
+      const scrollPosition = window.scrollY;
       if (scrollPosition === 0) {
         setActiveSection('home');
         return;
@@ -67,7 +67,7 @@ const Header = forwardRef((props, ref) => {
     <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}>
       <div className="container" >
         <div className="header">
-          <a href="" className="logo">
+          <a href="/" className="logo">
             <img src="files/signature.png" alt="" className="signature" oncontextmenu="return false;"/>
             <i className="fa fa-bolt"></i>
           </a>
