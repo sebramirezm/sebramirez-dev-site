@@ -1,5 +1,7 @@
 import React, { useState, useEffect, forwardRef } from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
+
+import signature from '../assets/images/signature.png';
 import '../styles/Header.css';
 
 const Header = forwardRef((props, ref) => {
@@ -26,14 +28,14 @@ const Header = forwardRef((props, ref) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.pageYOffset > 0);
+      setIsSticky(window.scrollY > 0);
       updateActiveSection();
       setIsMenuOpen(false);
       setIsLanguageMenuOpen(false);
     };
 
     const updateActiveSection = () => {
-      const scrollPosition = window.pageYOffset;
+      const scrollPosition = window.scrollY;
       if (scrollPosition === 0) {
         setActiveSection('home');
         return;
@@ -67,8 +69,8 @@ const Header = forwardRef((props, ref) => {
     <header ref={ref} className={`header-area ${isSticky ? 'sticky' : ''}`}>
       <div className="container" >
         <div className="header">
-          <a href="" className="logo">
-            <img src="files/signature.png" alt="" className="signature" oncontextmenu="return false;"/>
+          <a href="/" className="logo" alt="Sebramirez signature logo">
+            <img src={signature} alt="" className="signature" oncontextmenu="return false;"/>
             <i className="fa fa-bolt"></i>
           </a>
           <div className="menu-container">
@@ -105,7 +107,7 @@ const Header = forwardRef((props, ref) => {
             </ul>
             <div className="language-menu">
               <button className="language-menu-toggle" onClick={toggleLanguageMenu}>
-                <img src={`files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" oncontextmenu="return false;"/>
+              <img src={`/files/${currentLanguage}.png`} alt={currentLanguage} className="flag-icon" oncontextmenu="return false;"/>
               </button>
               {isLanguageMenuOpen && (
                 <ul className="language-submenu">
